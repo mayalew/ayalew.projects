@@ -129,6 +129,7 @@ function TicTacToeCntl($scope, $location,$window) {
 	if(isfound) return isfound;	
 
 	//check 2nd diagonal '/'
+	cell ={};
 	aCell.row=0; aCell.col=2; aCell.value=b[0][2];
 	bCell.row=1; bCell.col=1; bCell.value=b[1][1];
 	cCell.row=2; cCell.col=0; cCell.value=b[2][0];
@@ -146,6 +147,7 @@ function TicTacToeCntl($scope, $location,$window) {
 	 }
 	if(isfound) return isfound;	
 	
+	cell ={};
 	for (var j =0;j<=2;j++){ // rows		
 			aCell.row=j; aCell.col=0; aCell.value=b[j][0];
 			 bCell.row=j; bCell.col=1; bCell.value=b[j][1];
@@ -167,6 +169,7 @@ function TicTacToeCntl($scope, $location,$window) {
 		
 		if(isfound) return isfound;	
 			
+			cell ={};
 		for (var i =0;i<=2;i++){	// columns	
 			 aCell.row=0; aCell.col=i; aCell.value=b[0][i];
 			 bCell.row=1; bCell.col=i; bCell.value=b[1][i];
@@ -205,9 +208,9 @@ function TicTacToeCntl($scope, $location,$window) {
   	  	if(m==a.value && b.value==c.value && c.value=='')  return c;	
   	 	if(m==b.value && a.value==c.value && c.value=='')  return a;
   	 	if(m==c.value && a.value==b.value && a.value=='') return b;
-  	 	return {};//empty objecb
+  	 	return {};//empty object
   	  }
-  	  
+  	// find the last empty cell
   function lastOne(b){
   	var i=0; //row
   	var found=false;
@@ -217,11 +220,9 @@ function TicTacToeCntl($scope, $location,$window) {
 	  				$scope.dropPiece(i,j);
 	  				found=true;
 	  				break;
-	  			}
-	  		}
+	  			}}
 	  	i++;
-	  	}
-	  }
+	  }}
   
   };
  
