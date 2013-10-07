@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('Tictactoe', ['ngRoute']).
+angular.module('Tictactoe', []).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider.
       when('/', {templateUrl: 'index.html',   controller: TicTacToeCntl}).

@@ -1,22 +1,15 @@
 <!doctype html>
 <html data-ng-app="Tictactoe">
   <head>
-    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  	<link rel="stylesheet" href="css/bootstrap.css">
+    <script src="lib/angular.js"></script>
     <script src="js/app.js"></script>
      <script src="js/Controllers.js"></script>
      <style>
-     	body{
-     		font-size:20pt;
-     		margin-left: 50px;
+     	body {
+     		margin-left: 50pt;
      	}
-	.even {
-    		background: #999;
-			}
-	.odd {
-    		background: #555;
-		}
-   </style>
+     </style>
   </head>
   <body>
     <h4>Tic-Tac-Toe</h4>
@@ -28,8 +21,8 @@
     </p>
     <p>
       <table class="board" style="font-size:20pt;">
-        <tr data-ng-repeat="row in board track by $index" ng-class-even="even" ng-class-odd="odd">
-          <td ng-repeat="cell in row track by $index" data-ng-style="cellStyle" data-ng-click="dropPiece($parent.$index, $index)">
+        <tr data-ng-repeat="row in board" ng-class-even="even" ng-class-odd="odd">
+          <td ng-repeat="cell in row" data-ng-style="cellStyle" data-ng-click="dropPiece($parent.$index, $index)">
           	{{cell}}</td>
         </tr>
       </table>
